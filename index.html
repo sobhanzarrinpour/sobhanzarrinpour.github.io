@@ -3,10 +3,12 @@
         <title>my personal home page</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="personal home page of sobhan zarin pour, ui-ux, javascript developer">
-        <link rel="stylesheet" href="css/main.css">
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
         <link rel="stylesheet" href="css/all.css">
         <script src="js/all.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/main.css">
     </head>
     <body>
         <div id="app">
@@ -20,15 +22,17 @@
                 </div>
             </transition>
 
-            <div class="container">
+            <div class="containers">
                 <div class="left-container">
-                    <div class="user-info">
-                        <div class="avatar">
+                    <div class="user-info card">
+                        <div class="avatar card-image">
                             <img :src="avatar">
                         </div>
-                        <span class="username"> Sobhan Zarrinpour </span> 
-                        <span class="email">sobhan.zarrinpour@gmail.com</span>
-                        <div class="technologies"> 
+                        <div class="card-title">
+                            <span class="username"> Sobhan Zarrinpour </span> 
+                            <span class="email">sobhan.zarrinpour@gmail.com</span>
+                        </div>
+                        <div class="technologies card-body"> 
                             <ul>
                                 <li class="skills"><span>JS <i></i></span></li>
                                 <li class="skills"><span>html</span></li>
@@ -44,18 +48,60 @@
                                 <li class="skills"><span>Flutter</span></li>
                                 <li class="skills"><span>Electron</span></li>
                                 <li class="skills"><span>NativeScript</span></li>
+                                <li class="skills"><span>Python</span></li>
                             </ul> 
                         </div>
                     </div>
                 </div>
                 <div class="mid-container">
-                    <h3> Personal Information </h3>
-                    <p> My name is Sobhan Zarrinpour. I was born in guilan province of iran. </p>
-                    <p> I Love programming, also my favorite thing in my hole life till now is astronomy! </p>
-                    <br>
-                    <h3> Skills </h3>
-                    <p> I have skills in many field of programming like web, mobile or desktop but also have several years of experience in scientific programming. </p>
-                    <p> I learned languages like MATLAB and python for this purpose and I'm very good at it. </p>
+                    <div class="card">
+                        <h3 class="card-header"> Personal Information </h3>
+                        <div class="card-body">
+                            <p> My name is Sobhan Zarrinpour. I was born in guilan province of iran. </p>
+                            <p> I Love programming, also my favorite thing in my hole life till now is astronomy! </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3 class="card-header"> Skills </h3>
+                        <div class="card-body">
+                            <p> I have skills in many field of programming like web, mobile or desktop but also have several
+                                years of experience in scientific programming. </p>
+                            <p> I learned languages like MATLAB and python for this purpose and I'm very good at it. </p>
+                            <p> But I decided to leave this and come back into front-end world. I have several years of
+                                experience in javascript and stuff like Vue, Vuetify, Electron, NativeScript, Angular and
+                                some more </p>
+                            <p> For now my best is in js world and i'm keep going forward through that. </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-container">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/guilan-uni-logo-footer.png" alt="Card image cap"
+                            style="padding: 10px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Bachelor's degree</h5>
+                            <em style="font-size: 11px">pure mathematics</em>
+                            <p class="card-text">Study on computational Algebra</p>
+                            <a href="https://guilan.ac.ir/" target="_blank" class="btn btn-primary">Guilan University, Guilan
+                                (Iran)</a>
+                        </div>
+                    </div>
+
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="assets/iasbs-logo.png" alt="Card image cap"
+                            style="padding: 10px;">
+                        <div class="card-body">
+                            <h5 class="card-title">Master's degree</h5>
+                            <em style="font-size: 11px">Numerical Analysis</em>
+                            <p class="card-text">Iterative solvers for elliptic partial
+                                differential equations with fuzzy
+                                coefficients</p>
+                            <a href="https://iasbs.ac.ir/" target="_blank" class="btn btn-primary">
+                                IASBS,(Iran)
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
