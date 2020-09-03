@@ -146,14 +146,16 @@ loading screen page before load all page
 .username{
     position: relative;
     top: 20px;
-    left: 10px;
+    left: 0;
     font-family: sans-serif;
+    text-align: center !important;
 }
 .email {
     position: relative;
     top: 20px;
-    left: 10px;
+    left: 0;
     font-family: sans-serif;
+    text-align: center !important;
 }
 .technologies {
     position: relative;
@@ -168,12 +170,13 @@ loading screen page before load all page
 .skills, .skills span{
     position: relative;
     list-style: none;
-    text-align: center;
+    padding-left: 5px;
     width: calc(100% - 20px);
     margin-bottom: 5px;
     height: 16px;
     line-height: 16px;
     z-index: 10;
+    color: white;
 }
 
 .skills::after {
