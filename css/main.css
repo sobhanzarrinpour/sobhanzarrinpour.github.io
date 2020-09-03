@@ -1,8 +1,29 @@
 .html, body{
     margin: 0 !important;
     padding: 0 !important;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 4px;
 }
 
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 2px grey;
+    border-radius: 4px;
+    margin-top: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #36d9a9;
+    border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #36a9a9;
+}
 /* 
 loading screen page before load all page
 */
@@ -262,7 +283,8 @@ loading screen page before load all page
 }
 
 .mid-container .card{
-    width: 85%;
+    width: 100%;
+    margin-left: 10px;
     text-align: justify;
     margin-bottom: 15px;
     height: max-content;
