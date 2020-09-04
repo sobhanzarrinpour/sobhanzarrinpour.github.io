@@ -173,8 +173,8 @@ loading screen page before load all page
     padding-left: 5px;
     width: calc(100% - 20px);
     margin-bottom: 5px;
-    height: 16px;
-    line-height: 16px;
+    height: 18px;
+    line-height: 18px;
     z-index: 10;
     color: white;
 }
