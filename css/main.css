@@ -206,6 +206,19 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress95;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress95{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width: 95%;
+    }
 }
 .skills:nth-child(4)::before,
 .skills:nth-child(5)::before {
@@ -220,6 +233,20 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress85;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress85 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 85%;
+    }
 }
 .skills:nth-child(6)::before,
 .skills:nth-child(7)::before {
@@ -234,6 +261,20 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress65;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress65 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 65%;
+    }
 }
 .skills:nth-child(8)::before,
 .skills:nth-child(13)::before {
@@ -248,6 +289,20 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress80;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress80 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 80%;
+    }
 }
 .skills:nth-child(11)::before,
 .skills:nth-child(12)::before,
@@ -263,6 +318,20 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress60;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress60 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 60%;
+    }
 }
 .skills:nth-child(15)::before {
     content: "";
@@ -276,6 +345,20 @@ loading screen page before load all page
     border-bottom-right-radius: 0;
     z-index: 9;
     background: blue;
+    animation: progress70;
+    animation-timing-function: ease-in-out;
+    animation-duration: 1s;
+    animation-delay: 3100ms;
+    animation-iteration-count: 1;
+}
+@keyframes progress70 {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 70%;
+    }
 }
 
 .mid-container{
