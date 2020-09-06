@@ -9,7 +9,6 @@ new Vue({
     },
     methods:{
         loading_rem() {
-            // document.getElementById('loading-screen').style.display = 'none';
             this.screen_loaded = true;
         }
     }
