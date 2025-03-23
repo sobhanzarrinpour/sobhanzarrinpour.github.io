@@ -1,0 +1,42 @@
+.roboto-regular{
+    font-family: Roboto-Regular !important;
+}
+.roboto-black{
+    font-family: Roboto-Black !important;
+}
+.roboto-bold{
+    font-family: Roboto-Bold !important;
+}
+.roboto-italic{
+    font-family: Roboto-Italic !important;
+}
+.roboto-medium{
+    font-family: Roboto-Medium !important;
+}
+.roboto-thin{
+    font-family: Roboto-Thin !important;
+}
+@font-face {
+    font-family: "Roboto-Regular";
+    src:url('./fonts/Roboto-Regular.ttf');
+}
+@font-face {
+    font-family: "Roboto-Black";
+    src:url('./fonts/Roboto-Black.ttf');
+}
+@font-face {
+    font-family: "Roboto-Bold";
+    src:url('./fonts/Roboto-Bold.ttf');
+}
+@font-face {
+    font-family: "Roboto-Italic";
+    src:url('./fonts/Roboto-Italic.ttf');
+}
+@font-face {
+    font-family: "Roboto-Medium";
+    src:url('./fonts/Roboto-Medium.ttf');
+}
+@font-face {
+    font-family: "Roboto-Thin";
+    src:url('./fonts/Roboto-Thin.ttf');
+}

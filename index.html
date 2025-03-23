@@ -1,113 +1,30 @@
-<html>
-    <head>
-        <title>my github personal home page</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="personal home page of sobhan zarin pour, ui-ux, javascript developer">
-        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
-        <link rel="stylesheet" href="css/all.css">
-        <script src="js/all.js"></script>
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" href="css/main.css">
-    </head>
-    <body>
-        <div id="app">
-            <transition name="screen_loaded" mode="out">
-                <div class="loading-screen" id="loading-screen" v-if="!screen_loaded">
-                    <span class="loader-screen"></span>
-                    <span class="loader-screen"></span>
-                    <span class="loader-screen"></span>
-                    <span class="loader-screen"></span>
-                    <span class="loader-screen"></span>
-                </div>
-            </transition>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+    <title>Document</title>
+    
 
-            <div class="containers">
-                <div class="left-container">
-                    <div class="user-info card">
-                        <div class="avatar card-image">
-                            <img :src="avatar">
-                        </div>
-                        <div class="card-title" style="text-align: center;">
-                            <span class="username"> Sobhan Zarrinpour </span> 
-                            <span class="email">sobhan.zarrinpour@gmail.com</span>
-                        </div>
-                        <div class="technologies card-body"> 
-                            <ul>
-                                <li class="skills"><span>JS <i class="fab fa-js-square"></i></span></li>
-                                <li class="skills"><span>html <i class="fab fa-html5"></i></span></li>
-                                <li class="skills"><span>css <i class="fab fa-css3"></i></span></li>
-                                <li class="skills"><span>php <i class="fab fa-php"></i></span></li>
-                                <li class="skills"><span>Mysql <i class="fas fa-database"></i></span></li>
-                                <li class="skills"><span>c++ <i class="fas fa-copyright"></i></span></li>
-                                <li class="skills"><span>linux <i class="fab fa-linux"></i> <i
-                                            class="fab fa-ubuntu"></i> <i class="fab fa-suse"></i> <i
-                                                class="fab fa-redhat"></i> <i class="fab fa-centos"></i></span></li>
-                                <li class="skills"><span>node <i class="fab fa-node"></i></span></li>
-                                <li class="skills"><span>Vue <i class="fab fa-vuejs"></i></span></li>
-                                <li class="skills"><span>Vuetify <i class="fab fa-vuejs"></i></span></li>
-                                <li class="skills"><span>Dart</span></li>
-                                <li class="skills"><span>Flutter</span></li>
-                                <li class="skills"><span>Electron <i class="fas fa-atom"></i></span></li>
-                                <li class="skills"><span>NativeScript </span></li>
-                                <li class="skills"><span>Python <i class="fab fa-python"></i></span></li>
-                            </ul> 
-                        </div>
-                    </div>
-                </div>
-                <div class="mid-container">
-                    <div class="card">
-                        <h3 class="card-header"> Personal Information </h3>
-                        <div class="card-body">
-                            <p> My name is Sobhan Zarrinpour . I was born in guilan province of iran. </p>
-                            <p> I Love programming, also my favorite thing in my hole life till now is astronomy! </p>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <h3 class="card-header"> Skills </h3>
-                        <div class="card-body">
-                            <p> I have skills in many field of programming like web, mobile or desktop but also have several
-                                years of experience in scientific programming. </p>
-                            <p> I learned languages like MATLAB and python for this purpose and I'm very good at it. </p>
-                            <p> But I decided to leave this and come back into front-end world. I have several years of
-                                experience in javascript and stuff like Vue, Vuetify, Electron, NativeScript, Angular and
-                                some more </p>
-                            <p> For now my best is in js world and i'm keep going forward through that. </p>
-                        </div>
-                    </div>
-                </div>
+                            <!-- ZarrinSoft --><link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900|Material+Icons" rel="stylesheet" /><link href="https://cdn.jsdelivr.net/npm/@mdi/font@6.x/css/materialdesignicons.min.css" rel="stylesheet" />
+        <link rel="stylesheet" href="./css/app.css">
+                            
+    
+</head>
+<body>
+    <div id="app">
+        <main-menu></main-menu>
+        <router></router>
+    </div>
+</body>
 
-                <div class="right-container">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/iasbs-logo.png" alt="Card image cap"
-                            style="padding: 10px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Master's degree</h5>
-                            <em style="font-size: 11px">Numerical Analysis</em>
-                            <p class="card-text">Iterative solvers for elliptic partial
-                                differential equations with fuzzy
-                                coefficients</p>
-                            <a href="https://iasbs.ac.ir/" target="_blank" class="btn btn-primary">
-                                IASBS,(Iran)
-                            </a>
-                        </div>
-                    </div>
 
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="assets/guilan-uni-logo-footer.png" alt="Card image cap"
-                            style="padding: 10px;">
-                        <div class="card-body">
-                            <h5 class="card-title">Bachelor's degree</h5>
-                            <em style="font-size: 11px">pure mathematics</em>
-                            <p class="card-text">Study on computational Algebra</p>
-                            <a href="https://guilan.ac.ir/" target="_blank" class="btn btn-primary">Guilan University,
-                                Guilan
-                                (Iran)</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="js/app.js"></script>
-    </body>
+                                <!-- ZarrinSoft --><script src="./js/vue.js"></script><script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+            <script src="./js/Services.js"></script>
+            <script src="./js/app.js"></script>
+            <script src="./js/router.js"></script>
+            <script src="./js/main.js"></script>
+                                
+
 </html>
