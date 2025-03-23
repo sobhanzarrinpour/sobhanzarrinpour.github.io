@@ -92,7 +92,7 @@ let homePage = Vue.component('home-page' , {
                 </div>
                 <main-svg></main-svg>
             </div>
-            <gallery :name="gallery" :id="gallery"></gallery>
+            <!--gallery :name="gallery" :id="gallery"></gallery-->
         </div>
     `,
 
