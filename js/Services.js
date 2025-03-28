@@ -107,7 +107,7 @@ const data_object = {
 
                 
 class WindowState {
-    #refreshTime = 30; // 3600 Second == 1 Hour
+    #refreshTime = 1800; // 3600 Second == 1 Hour
     // #state_controller = new StateController();
     #sessionStorageType = new SessionStorage()
     #time;
@@ -134,14 +134,14 @@ class WindowState {
             storage.store('sessionToken', currentToken);
             go_to_url_(storage.get('active_url'),storage.get('active_index'));
         }else{
-            storage.resetAll();
-            storage.store('sessionToken', currentToken);
-            go_to_url_("/",0);
+            this.clear_window_state();
         }
     }
 
     clear_window_state(){
-
+        storage.resetAll();
+        storage.store('sessionToken', currentToken);
+        go_to_url_('/',0);
     }
 }
                 

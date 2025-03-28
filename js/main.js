@@ -26,6 +26,7 @@ let renderer = Vue.component('router' , {
     watch: {
         render: function(newValue , oldValue){
             this.convertedMessage(newValue)
+            this.window_state.rafresh_token()
         }
     },
 
