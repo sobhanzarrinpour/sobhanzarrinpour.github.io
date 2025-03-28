@@ -107,13 +107,40 @@ const data_object = {
 
                 
 class WindowState {
-    constructor(){}
+    #refreshTime = 30; // 3600 Second == 1 Hour
+    // #state_controller = new StateController();
+    #sessionStorageType = new SessionStorage()
+    #time;
+    #utils = new Utils();
+    constructor(){
+        this.#time = this.#utils.getCurrentTime()
+        this.#refreshTime *= 1000; // current time is in unix timestamp in milisecond, so second must convert to milisecond
+
+        this.rafresh_token()
+    }
 
     api_call(currentPage , url , method , header , body){
 
     }
 
-    apt_track(currentPage , url , activeIndex){
+    api_track(currentPage , url , activeIndex){
+
+    }
+
+    rafresh_token(currentPage, url, activeIndex){
+        let currentToken = Math.floor(this.#time / this.#refreshTime);
+        if(currentToken <= storage.get('sessionToken')){
+            currentToken = Math.floor((this.#time + this.#refreshTime) / this.#refreshTime);
+            storage.store('sessionToken', currentToken);
+            go_to_url_(storage.get('active_url'),storage.get('active_index'));
+        }else{
+            storage.resetAll();
+            storage.store('sessionToken', currentToken);
+            go_to_url_("/",0);
+        }
+    }
+
+    clear_window_state(){
 
     }
 }
@@ -396,5 +423,16 @@ class StateController{
                 }
             })
         })
+    }
+}
+                
+class Utils{
+    constructor(){}
+
+    getCurrentTime(){ 
+        if (!Date.now) {
+            Date.now = function() { return new Date().getTime(); }
+        }
+        return Date.now();
     }
 }

@@ -7,6 +7,7 @@ let renderer = Vue.component('router' , {
 
     data(){
         return {
+            window_state: new WindowState(),
             cpage: '/home',
             ctitle: 'home page',
             props: null
@@ -110,6 +111,8 @@ if(document.createEvent){
     currentPageIndexEvent.eventType = "currentPageIndex";
 }
 function go_to_url_(pathname, cp_index){
+    storage.store('active_url', pathname);
+    storage.store('active_index', cp_index);
     go_to_url(pathname);
     currentPageIndex = cp_index;
     if(document.createEvent){

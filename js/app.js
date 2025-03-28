@@ -33,7 +33,7 @@ let mainMenu = Vue.component('main-menu',{
 
     methods: {
         changePage(menuItem){
-            go_to_url(menuItem.url); 
+            go_to_url_(menuItem.url, menuItem.activeIndex); 
             this.activeIndex = menuItem.activeIndex;
 
             // this.rahavard_control();
@@ -110,8 +110,7 @@ let homePage = Vue.component('home-page' , {
                 self.fancyLoader += '.';
             else
                 self.fancyLoader = '';
-        },300);
-        storage.resetAll();
+        },300); 
     },
 
     // mounted(){
@@ -611,7 +610,7 @@ let product = Vue.component('product' , {
                     <div class="product-header">
                         <h3 class="product-Tile"> {{ product.page_title }} </h3>
                     </div>
-                    <div class="product-desc" id="page_content"></div>
+                    <div class="product-desc" id="page_content" v-on:loaded="render_page_"></div>
                 </div>
                 <div class="product-footer">
                     <div class="product-manual" v-show="product.productUserManualUrl && product.productUserManualUrl != null && product.productUserManualUrl != undefined && product.productUserManualUrl != '' "> 
@@ -660,12 +659,16 @@ let product = Vue.component('product' , {
             this.getPageData(this.productID)
             .then(t => {
                 this.product = t;
-                this.render_page_();
+                // this.render_page_();
+                document.getElementById('page_content').onloadeddata(this.render_page_)
             })
         },
 
         render_page_(){
-            document.getElementById('page_content').innerHTML = this.product.page_html;
+            let self = this;
+            console.log(this.page_html);
+            setTimeout(()=>document.getElementById('page_content').innerHTML = self.product.page_html, 5000);
+            
         }
     },
 })
