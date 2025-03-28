@@ -385,8 +385,9 @@ let products = Vue.component('products' , {
             })
         } ,
         gotoProduct(id){
-            sessionStorage.setItem('productID' , id);
-            go_to_url('/product');
+            // sessionStorage.setItem('productID' , id);
+            storage.store('productID', id);
+            // go_to_url('/product');
         }
     },
 })
