@@ -107,7 +107,7 @@ const data_object = {
 
                 
 class WindowState {
-    #refreshTime = 15; // 1800; // 3600 Second == 1 Hour
+    #refreshTime = 1800; // 3600 Second == 1 Hour
     // #state_controller = new StateController();
     #sessionStorageType = new SessionStorage()
     #time;
