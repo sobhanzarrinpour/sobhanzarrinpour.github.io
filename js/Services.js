@@ -115,12 +115,11 @@ class WindowState {
     #refreshTime = CONFIG.REFRESH_TOKEN;
     #time;
     #utils = new Utils();
-    // StateVars;
+
     constructor(){
         this.#time = this.#utils.getCurrentTime()
         this.#refreshTime *= 1000; // current time is in unix timestamp in milisecond, so second must convert to milisecond
         this.rafresh_token();
-        // this.StateVars = storage.exists('StateVars') ? storage.toArray(storage.get('StateVars')) : [];
     }
 
     api_call(currentPage , url , method , header , body){
@@ -149,7 +148,7 @@ class WindowState {
     }
 
     get_value_name(var_name, module){
-        return `StateVar_${module}_${var_name}`;
+        return `StateVar_${module.$options._componentTag}_${var_name}`;
     }
 
     save_var(var_name, var_value, module){
@@ -158,7 +157,6 @@ class WindowState {
 
     get_var(var_name, module){
         if (storage.exists(this.get_value_name(var_name, module))){
-            // return JSON.parse(storage.get(this.get_value_name(var_name, module)));
             return storage.get(this.get_value_name(var_name, module));
         }else{
             return null;

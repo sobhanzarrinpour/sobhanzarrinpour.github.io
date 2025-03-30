@@ -388,18 +388,18 @@ let products = Vue.component('products' , {
             })
         } ,
         gotoProduct(id){
-            // sessionStorage.setItem('productID' , id);
             storage.store('productID', id);
             this.productsList.find(a => a.productID == id).productName = 'If you refresh This Will Stay!'
-            // go_to_url('/product');
-            this.window_state.save_var('productsList', this.productsList, 'products');
+            
+            
+            this.window_state.save_var('productsList', this.productsList, this);
         },
 
         update_vars(vars){
+            let self = this;
             vars.forEach(element => {
-                let p = this.window_state.get_var('productsList', 'products');
+                let p = this.window_state.get_var(element, self);
                 if (p != null){
-                    // this.productsList = productsList;
                     let command = `this.${element} = ${p}`;
                     eval(command)
                 }
@@ -667,7 +667,6 @@ let product = Vue.component('product' , {
         },
 
         async getProduct(){
-        // async getProduct(){
             // let self = this;
             // await this.api.GET_DATA('/get_product/$' , this.productID).then(async data => {
             //     self.product = await data; 
@@ -685,7 +684,6 @@ let product = Vue.component('product' , {
             let self = this;
             console.log(this.page_html);
             setTimeout(()=>document.getElementById('page_content').innerHTML = self.product.page_html, 5000);
-            
         }
     },
 })
