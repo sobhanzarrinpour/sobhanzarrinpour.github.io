@@ -363,7 +363,8 @@ let products = Vue.component('products' , {
             ] , 
             testData: null,
             loadedData: false ,
-            api: new API()
+            api: new API(),
+            window_state: new WindowState()
         }
     },
 
@@ -374,6 +375,8 @@ let products = Vue.component('products' , {
         console.log(storage.get('productPage'));
 
         storage.setActiveIndex('chain_test' , 0);
+        
+        this.update_vars(['productsList'])
     } ,
 
     methods: {
@@ -387,7 +390,20 @@ let products = Vue.component('products' , {
         gotoProduct(id){
             // sessionStorage.setItem('productID' , id);
             storage.store('productID', id);
+            this.productsList.find(a => a.productID == id).productName = 'If you refresh This Will Stay!'
             // go_to_url('/product');
+            this.window_state.save_var('productsList', this.productsList, 'products');
+        },
+
+        update_vars(vars){
+            vars.forEach(element => {
+                let p = this.window_state.get_var('productsList', 'products');
+                if (p != null){
+                    // this.productsList = productsList;
+                    let command = `this.${element} = ${p}`;
+                    eval(command)
+                }
+            });
         }
     },
 })

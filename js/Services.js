@@ -1,5 +1,10 @@
 /* ZarrinSoft */
                 
+let CONFIG = {
+    REFRESH_TOKEN: 1800
+};
+// REFRESH_TOKEN: 1800  // 3600 Second == 1 Hour
+                
 // const api_url = 'https://gorest.co.in';
 
 // const api_list = [
@@ -107,16 +112,15 @@ const data_object = {
 
                 
 class WindowState {
-    #refreshTime = 1800; // 3600 Second == 1 Hour
-    // #state_controller = new StateController();
-    #sessionStorageType = new SessionStorage()
+    #refreshTime = CONFIG.REFRESH_TOKEN;
     #time;
     #utils = new Utils();
+    // StateVars;
     constructor(){
         this.#time = this.#utils.getCurrentTime()
         this.#refreshTime *= 1000; // current time is in unix timestamp in milisecond, so second must convert to milisecond
-
-        this.rafresh_token()
+        this.rafresh_token();
+        // this.StateVars = storage.exists('StateVars') ? storage.toArray(storage.get('StateVars')) : [];
     }
 
     api_call(currentPage , url , method , header , body){
@@ -127,7 +131,7 @@ class WindowState {
 
     }
 
-    rafresh_token(currentPage, url, activeIndex){
+    rafresh_token(){
         let currentToken = Math.floor(this.#time / this.#refreshTime);
         if(currentToken <= storage.get('sessionToken')){
             currentToken = Math.floor((this.#time + this.#refreshTime) / this.#refreshTime);
@@ -142,6 +146,23 @@ class WindowState {
         storage.resetAll();
         storage.store('sessionToken', currentToken);
         go_to_url_('/',0);
+    }
+
+    get_value_name(var_name, module){
+        return `StateVar_${module}_${var_name}`;
+    }
+
+    save_var(var_name, var_value, module){
+        storage.store(this.get_value_name(var_name, module), JSON.stringify(var_value));
+    }
+
+    get_var(var_name, module){
+        if (storage.exists(this.get_value_name(var_name, module))){
+            // return JSON.parse(storage.get(this.get_value_name(var_name, module)));
+            return storage.get(this.get_value_name(var_name, module));
+        }else{
+            return null;
+        }
     }
 }
                 
