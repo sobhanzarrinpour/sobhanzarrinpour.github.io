@@ -22,13 +22,16 @@ let mainMenu = Vue.component('main-menu',{
                 // {text: " Contact Me " , url: "/dashboard" , activeIndex: 3}
             ],
             activeIndex: 0,
-            light_theme: true
+            light_theme: true,
+            window_state: new WindowState()
         }
     },
     mounted(){
         this.activeIndex = this.menuItems.filter(a => a.url == currentPage).map(b => b.activeIndex);
         document.addEventListener('currentPageIndex', this.changePageIndex);
         // this.rahavard_control();
+
+        this.update_vars(['light_theme']);
     },
 
     methods: {
@@ -51,7 +54,23 @@ let mainMenu = Vue.component('main-menu',{
                 document.body.style = `--main-bg: var(--light-color-60); --main-color: var(--dark-color-60); --sun-moon-color: gold; --sun-moon-center-x: 395; --menu-active-color: var(--dark-menu-active-color); --menu-color-hover: var(--light-menu-color-hover);`;
                 this.light_theme = true;
             }
+            this.window_state.save_var('light_theme', this.light_theme, this);
         } ,
+
+        update_vars(vars){
+            let self = this;
+            vars.forEach(element => {
+                let p = this.window_state.get_var(element, self);
+                if (p != null){
+                    let command = `this.${element} = ${p}`;
+                    eval(command)
+                    if (element == 'light_theme'){
+                        this.light_theme = !this.light_theme;
+                        this.changeColor();
+                    }
+                }
+            });
+        }
 
         // rahavard_control(){
         //     let rahavardWidget = document.getElementsByTagName('a');
@@ -376,7 +395,7 @@ let products = Vue.component('products' , {
 
         storage.setActiveIndex('chain_test' , 0);
         
-        this.update_vars(['productsList'])
+        this.update_vars(['productsList']);
     } ,
 
     methods: {
